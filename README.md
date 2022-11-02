@@ -31,6 +31,14 @@ watch -n 0.5 nvidia-smi
 ```
 
 
+### Quick SentEval bugs
+See https://github.com/facebookresearch/SentEval/issues/89
+
+```sh
+cp quickfix-utils.py src/senteval/senteval/utils.py
+```
+
+
 ### Download Datasets
 
 ```sh
@@ -44,7 +52,8 @@ nohup bash download-seeg.sh &
 mkdir downstream
 cp download-senteval.sh downstream/download-senteval.sh
 cd downstream/ 
-nohup bash download-senteval.sh &
+wget https://raw.githubusercontent.com/facebookresearch/SentEval/main/data/downstream/tokenizer.sed
+bash download-senteval.sh &
 cd ..
 ```
 
