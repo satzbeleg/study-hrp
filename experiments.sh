@@ -19,7 +19,7 @@ declare -a MODELS=(
 declare -a NUMBOOLFEATS=(256 384 512 768 1024 1536 2048)
 
 # random seeds
-decalare -a SEEDS=(23 24 25 26 27 28 29 30 31 32)
+declare -a SEEDS=(23 24 25 26 27 28 29 30 31 32)
 
 
 for MODEL in ${MODELS[*]} ; do
