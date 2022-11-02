@@ -22,7 +22,7 @@ args = parser.parse_args()
 
 
 # -----------------------------------------------
-LOGFOLDER = os.path.join("results", args.sbert_model.replace('/', '_'))
+LOGFOLDER = os.path.join("results", args.model.replace('/', '_'))
 os.makedirs(LOGFOLDER, exist_ok=True)
 
 RESULTFILEPATH = os.path.join(
