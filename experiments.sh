@@ -30,7 +30,7 @@ for MODEL in ${MODELS[*]} ; do
     python3 script.py --model=$MODEL --output-type=float
 
     # run hrp
-    for NUMBOOLFEAT in ${NUMBOOLFEATS[*]} ; do
+    for NFEATS in ${NUMBOOLFEATS[*]} ; do
         for SEED in ${SEEDS[*]} ; do
             python3 script.py \
                 --model=$MODEL \
