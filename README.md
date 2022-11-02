@@ -53,7 +53,7 @@ mkdir downstream
 cp download-senteval.sh downstream/download-senteval.sh
 cd downstream/ 
 wget https://raw.githubusercontent.com/facebookresearch/SentEval/main/data/downstream/tokenizer.sed
-bash download-senteval.sh &
+nohup bash download-senteval.sh &
 cd ..
 ```
 
@@ -64,3 +64,9 @@ nohup bash download-sbert.sh &
 nohup bash download-tfhub.sh &
 python -m laserembeddings download-models
 ```
+
+### Run all experiments
+```sh
+nohup bash experiments.sh &
+```
+
