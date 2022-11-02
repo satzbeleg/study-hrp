@@ -7,7 +7,7 @@ import tensorflow as tf
 import senteval
 import sentence_embedding_evaluation_german as seeg
 import os
-import sys
+# import sys
 import json
 
 
@@ -22,10 +22,10 @@ args = parser.parse_args()
 
 
 # -----------------------------------------------
-LOGFOLDER = os.join.path("results", args.sbert_model.replace('/', '_'))
+LOGFOLDER = os.path.join("results", args.sbert_model.replace('/', '_'))
 os.makedirs(LOGFOLDER, exist_ok=True)
 
-RESULTFILEPATH = os.join.path(
+RESULTFILEPATH = os.path.join(
     LOGFOLDER,
     f"numbool={args.num_bool_features}",
     f"randomstate={args.random_state}",
