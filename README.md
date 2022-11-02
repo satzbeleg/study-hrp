@@ -55,3 +55,9 @@ nohup bash download-sbert.sh &
 nohup bash download-tfhub.sh &
 python -m laserembeddings download-models
 ```
+
+### Run all experiments
+```sh
+nohup bash experiments.sh &
+```
+
