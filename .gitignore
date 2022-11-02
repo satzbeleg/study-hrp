@@ -131,7 +131,7 @@ dmypy.json
 
 nohup.out
 datasets
-datasets-senteval
+downstream
 src
 models-sbert
 models-tfhub

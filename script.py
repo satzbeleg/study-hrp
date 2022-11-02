@@ -7,7 +7,7 @@ import tensorflow as tf
 import senteval
 import sentence_embedding_evaluation_german as seeg
 import os
-import sys
+# import sys
 import json
 
 
@@ -164,6 +164,7 @@ senteval_params = {
         'nhid': 0, 'optim': 'adam', 'batch_size': 64,
         'tenacity': 5, 'epoch_size': 4}
 }
+
 
 # -----------------------------------------------
 # (4a) SentEval downstream tasks
