@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+nohup.out
+datasets
+datasets-senteval
+src
+models-sbert
+models-tfhub
