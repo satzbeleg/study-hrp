@@ -165,6 +165,17 @@ senteval_params = {
         'tenacity': 5, 'epoch_size': 4}
 }
 
+
+# DELETE !!!
+senteval_params = {
+    'task_path': './datasets-senteval', 
+    'usepytorch': True,
+    'kfold': 2,
+    'classifier': {
+        'nhid': 0, 'optim': 'adam', 'batch_size': 64,
+        'tenacity': 2, 'epoch_size': 1}
+}
+
 # -----------------------------------------------
 # (4a) SentEval downstream tasks
 
@@ -213,6 +224,16 @@ seeg_params = {
     'balanced': True,
     'batch_size': 128, 
     'num_epochs': 500,
+}
+
+
+# DELETE !!!
+seeg_params = {
+    'datafolder': './datasets',
+    'bias': True,
+    'balanced': True,
+    'batch_size': 128, 
+    'num_epochs': 1,
 }
 
 # -----------------------------------------------
