@@ -25,10 +25,10 @@ args = parser.parse_args()
 LOGFOLDER = os.path.join("results", args.model.replace('/', '_'))
 os.makedirs(LOGFOLDER, exist_ok=True)
 
-RESULTFILEPATH = os.path.join(
-    LOGFOLDER,
-    f"numbool={args.num_bool_features}",
-    f"randomstate={args.random_state}",
+RESULTFILEPATH = (
+    LOGFOLDER + "/"
+    f"numbool={args.num_bool_features}-"
+    f"randomstate={args.random_state}-"
     f"outputtype={args.output_type}")
 
 # -----------------------------------------------
