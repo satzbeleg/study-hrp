@@ -157,7 +157,7 @@ elif args.output_type == "float":
 
 # p.3 in https://arxiv.org/pdf/1803.05449.pdf
 senteval_params = {
-    'task_path': './datasets-senteval', 
+    'task_path': './', 
     'usepytorch': True,
     'kfold': 10,
     'classifier': {
