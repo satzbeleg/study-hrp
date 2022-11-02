@@ -41,9 +41,9 @@ nohup bash download-seeg.sh &
 
 ```sh
 # wget https://raw.githubusercontent.com/facebookresearch/SentEval/main/data/downstream/get_transfer_data.bash -O download-senteval.sh
-mkdir datasets-senteval
-cp download-senteval.sh datasets-senteval/download-senteval.sh
-cd datasets-senteval/ 
+mkdir downstream
+cp download-senteval.sh downstream/download-senteval.sh
+cd downstream/ 
 nohup bash download-senteval.sh &
 cd ..
 ```
