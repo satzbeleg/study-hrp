@@ -174,7 +174,6 @@ senteval_params = {
         'tenacity': 3, 'epoch_size': 2}
 }
 
-
 # -----------------------------------------------
 # (4a) SentEval downstream tasks
 
@@ -185,55 +184,10 @@ senteval_tasks = [
 
 
 # -----------------------------------------------
-# (5a) Run SentEval
+# (5b) Run SentEval
 
 se = senteval.engine.SE(senteval_params, senteval_preprocess, senteval_prepare)
 senteval_results = se.eval(senteval_tasks)
 
 with open(f"{RESULTFILEPATH}-senteval.json", 'w') as fp:
     json.dump(senteval_results, fp)
-
-
-# -----------------------------------------------
-# (2b) SEEG Preprocess Functions
-
-# the `batch` contains a list of strings
-if args.output_type == "hrp":
-    def seeg_preprocess(sentences):
-        features = call_model_embed(sentences)
-        hashvalues = model_hrproj(tf.convert_to_tensor(features))
-        return hashvalues.numpy()
-
-elif args.output_type == "sigmoid":
-    def seeg_preprocess(sentences):
-        features = call_model_embed(sentences)
-        return (features > 0).astype(float)  # rounded sigmoid 
-
-elif args.output_type == "float":
-    def seeg_preprocess(sentences):
-        features = call_model_embed(sentences)
-        return features
-
-# -----------------------------------------------
-# (3b) SEEG settings
-
-seeg_params = {
-    'datafolder': './datasets',
-    'bias': True,
-    'balanced': True,
-    'batch_size': 128, 
-    'num_epochs': 500,
-}
-
-# -----------------------------------------------
-# (4b) SEEG downstream tasks
-
-seeg_tasks = ['VMWE', 'ABSD-2', 'MIO-P', 'ARCHI', 'LSDC', 'KLEX-P']
-
-# -----------------------------------------------
-# (5b) Run SEEG 
-
-seeg_results = seeg.evaluate(seeg_tasks, seeg_preprocess, **seeg_params)
-
-with open(f"{RESULTFILEPATH}-seeg.json", 'w') as fp:
-    json.dump(seeg_results, fp)
