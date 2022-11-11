@@ -74,7 +74,7 @@ elif args.model in ['laser-en', 'laser-de']:
 elif args.model in ['m-use']:
     model_embed = tensorflow_hub.load(
         "https://tfhub.dev/google/universal-sentence-encoder-multilingual/3")
-    logger.info(f"Laser model is loaded.")
+    logger.info(f"m-USE model is loaded.")
     tmp = model_embed(["get dims."])
     NUM_FEATURES = tmp.shape[1]
     logger.info(f"Num of m-USE features: {NUM_FEATURES}")
