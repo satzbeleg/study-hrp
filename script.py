@@ -69,7 +69,7 @@ elif args.model in ['laser-en', 'laser-de']:
     logger.info(f"Num of Laser features: {NUM_FEATURES}")
 
     def call_model_embed(sentences):
-        return model_embed.embed_sentences(sentences)
+        return model_embed.embed_sentences(sentences, lang=args.model[-2:])
 
 elif args.model in ['m-use']:
     model_embed = tensorflow_hub.load(
