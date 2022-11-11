@@ -80,7 +80,7 @@ elif args.model in ['m-use']:
     logger.info(f"Num of m-USE features: {NUM_FEATURES}")
 
     def call_model_embed(sentences):
-        return model_embed(sentences)
+        return model_embed(sentences).numpy()
 
 # -----------------------------------------------
 # (1b) Specify HRP layer
