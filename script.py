@@ -1,9 +1,10 @@
 import argparse
 import logging
+import tensorflow as tf
 import sentence_transformers as sbert
 import laserembeddings
 import tensorflow_hub
-import tensorflow as tf
+import tensorflow_text 
 import senteval
 import sentence_embedding_evaluation_german as seeg
 import os
