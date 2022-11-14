@@ -1,0 +1,65 @@
+22-11-14 14:46:38 - INFO - absl: Using ./models-tfhub to cache modules.
+22-11-14 14:46:41 - INFO - __main__: m-USE model is loaded.
+22-11-14 14:46:43 - INFO - __main__: Num of m-USE features: 512
+22-11-14 14:46:43 - INFO - root: Generating sentence embeddings
+22-11-14 14:46:46 - INFO - root: Generated sentence embeddings
+22-11-14 14:46:46 - INFO - root: Training pytorch-MLP-nhid0-rmsprop-bs128 with (inner) 5-fold cross-validation
+22-11-14 14:47:17 - INFO - root: Best param found at split 1: l2reg = 0.01                 with score 69.16
+22-11-14 14:47:47 - INFO - root: Best param found at split 2: l2reg = 0.001                 with score 68.64
+22-11-14 14:48:19 - INFO - root: Best param found at split 3: l2reg = 0.0001                 with score 69.75
+22-11-14 14:48:51 - INFO - root: Best param found at split 4: l2reg = 0.001                 with score 70.5
+22-11-14 14:49:12 - INFO - root: Best param found at split 5: l2reg = 0.001                 with score 68.34
+22-11-14 14:49:13 - INFO - root: Generating sentence embeddings
+22-11-14 14:49:13 - INFO - root: Generated sentence embeddings
+22-11-14 14:49:13 - INFO - root: Training pytorch-MLP-nhid0-rmsprop-bs128 with (inner) 5-fold cross-validation
+22-11-14 14:49:19 - INFO - root: Best param found at split 1: l2reg = 1e-05                 with score 79.37
+22-11-14 14:49:26 - INFO - root: Best param found at split 2: l2reg = 1e-05                 with score 78.71
+22-11-14 14:49:37 - INFO - root: Best param found at split 3: l2reg = 1e-05                 with score 79.6
+22-11-14 14:49:47 - INFO - root: Best param found at split 4: l2reg = 1e-05                 with score 78.15
+22-11-14 14:49:58 - INFO - root: Best param found at split 5: l2reg = 0.01                 with score 78.41
+22-11-14 14:49:59 - INFO - root: Generating sentence embeddings
+22-11-14 14:50:01 - INFO - root: Generated sentence embeddings
+22-11-14 14:50:01 - INFO - root: Training pytorch-MLP-nhid0-rmsprop-bs128 with (inner) 5-fold cross-validation
+22-11-14 14:50:27 - INFO - root: Best param found at split 1: l2reg = 0.001                 with score 90.36
+22-11-14 14:50:55 - INFO - root: Best param found at split 2: l2reg = 0.01                 with score 90.44
+22-11-14 14:51:25 - INFO - root: Best param found at split 3: l2reg = 0.001                 with score 90.79
+22-11-14 14:51:53 - INFO - root: Best param found at split 4: l2reg = 0.0001                 with score 90.28
+22-11-14 14:52:21 - INFO - root: Best param found at split 5: l2reg = 0.01                 with score 90.09
+22-11-14 14:52:23 - INFO - root: Generating sentence embeddings
+22-11-14 14:52:25 - INFO - root: Generated sentence embeddings
+22-11-14 14:52:25 - INFO - root: Training pytorch-MLP-nhid0-rmsprop-bs128 with (inner) 5-fold cross-validation
+22-11-14 14:52:52 - INFO - root: Best param found at split 1: l2reg = 1e-05                 with score 87.58
+22-11-14 14:53:21 - INFO - root: Best param found at split 2: l2reg = 1e-05                 with score 85.66
+22-11-14 14:53:51 - INFO - root: Best param found at split 3: l2reg = 0.001                 with score 87.42
+22-11-14 14:54:21 - INFO - root: Best param found at split 4: l2reg = 0.001                 with score 86.52
+22-11-14 14:54:50 - INFO - root: Best param found at split 5: l2reg = 0.001                 with score 86.53
+22-11-14 14:54:52 - INFO - root: Computing embedding for train
+22-11-14 14:54:53 - INFO - root: Computed train embeddings
+22-11-14 14:54:53 - INFO - root: Computing embedding for dev
+22-11-14 14:54:54 - INFO - root: Computed dev embeddings
+22-11-14 14:54:54 - INFO - root: Computing embedding for test
+22-11-14 14:54:54 - INFO - root: Computed test embeddings
+22-11-14 14:54:54 - INFO - root: Training pytorch-MLP-nhid0-rmsprop-bs128 with standard validation..
+22-11-14 14:55:02 - INFO - root: [('reg:1e-05', 35.33), ('reg:0.0001', 35.6), ('reg:0.001', 37.33), ('reg:0.01', 36.97)]
+22-11-14 14:55:02 - INFO - root: Validation : best param found is reg = 0.001 with score             37.33
+22-11-14 14:55:02 - INFO - root: Evaluating...
+22-11-14 14:55:04 - INFO - root: ***** Transfer task : TREC *****
+
+
+22-11-14 14:55:05 - INFO - root: Computed train embeddings
+22-11-14 14:55:05 - INFO - root: Computed test embeddings
+22-11-14 14:55:05 - INFO - root: Training pytorch-MLP-nhid0-rmsprop-bs128 with 5-fold cross-validation
+22-11-14 14:55:23 - INFO - root: [('reg:1e-05', 82.37), ('reg:0.0001', 81.31), ('reg:0.001', 78.41), ('reg:0.01', 80.74)]
+22-11-14 14:55:23 - INFO - root: Cross-validation : best param found is reg = 1e-05             with score 82.37
+22-11-14 14:55:23 - INFO - root: Evaluating...
+22-11-14 14:55:24 - INFO - root: ***** Transfer task : MRPC *****
+
+
+22-11-14 14:55:25 - INFO - root: Computing embedding for train
+22-11-14 14:55:26 - INFO - root: Computed train embeddings
+22-11-14 14:55:26 - INFO - root: Computing embedding for test
+22-11-14 14:55:27 - INFO - root: Computed test embeddings
+22-11-14 14:55:27 - INFO - root: Training pytorch-MLP-nhid0-rmsprop-bs128 with 5-fold cross-validation
+22-11-14 14:55:41 - INFO - root: [('reg:1e-05', 72.79), ('reg:0.0001', 72.72), ('reg:0.001', 73.11), ('reg:0.01', 72.47)]
+22-11-14 14:55:41 - INFO - root: Cross-validation : best param found is reg = 0.001             with score 73.11
+22-11-14 14:55:41 - INFO - root: Evaluating...
