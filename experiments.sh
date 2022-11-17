@@ -2,6 +2,9 @@
 
 conda activate gpu-venv-study-hrp
 
+export PYTORCH_CUDA_ALLOC_CONF=garbage_collection_threshold:0.6,max_split_size_mb:128
+# export TF_ENABLE_ONEDNN_OPTS=1
+
 export SENTENCE_TRANSFORMERS_HOME=./models-sbert
 export TFHUB_CACHE_DIR=./models-tfhub
 
