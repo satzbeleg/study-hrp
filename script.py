@@ -188,11 +188,13 @@ senteval_tasks = [
 # -----------------------------------------------
 # (5a) Run SentEval
 
-se = senteval.engine.SE(senteval_params, senteval_preprocess, senteval_prepare)
-senteval_results = se.eval(senteval_tasks)
+# CODE TEMPORARILY DEACTIVATED!!!
 
-with open(f"{RESULTFILEPATH}-senteval.json", 'w') as fp:
-    json.dump(senteval_results, fp)
+# se = senteval.engine.SE(senteval_params, senteval_preprocess, senteval_prepare)
+# senteval_results = se.eval(senteval_tasks)
+
+# with open(f"{RESULTFILEPATH}-senteval.json", 'w') as fp:
+#     json.dump(senteval_results, fp)
 
 
 # -----------------------------------------------
@@ -223,7 +225,7 @@ seeg_params = {
     'bias': True,
     'balanced': True,
     'batch_size': 128, 
-    'num_epochs': 500,
+    'num_epochs': 250,
 }
 
 # -----------------------------------------------
