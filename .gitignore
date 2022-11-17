@@ -135,3 +135,5 @@ downstream
 src
 models-sbert
 models-tfhub
+
+.DS_Store
