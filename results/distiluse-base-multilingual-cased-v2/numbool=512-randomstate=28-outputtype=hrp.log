@@ -64,3 +64,7 @@
 22-11-06 19:44:50 - INFO - root: [('reg:1e-05', 73.4), ('reg:0.0001', 73.31), ('reg:0.001', 72.74), ('reg:0.01', 73.55)]
 22-11-06 19:44:50 - INFO - root: Cross-validation : best param found is reg = 0.01             with score 73.55
 22-11-06 19:44:50 - INFO - root: Evaluating...
+22-11-19 01:15:32 - INFO - sentence_transformers.SentenceTransformer: Load pretrained SentenceTransformer: distiluse-base-multilingual-cased-v2
+22-11-19 01:15:33 - INFO - sentence_transformers.SentenceTransformer: Use pytorch device: cuda
+22-11-19 01:15:33 - INFO - __main__: SBert model distiluse-base-multilingual-cased-v2 is loaded.
+22-11-19 01:15:35 - INFO - __main__: Num of SBert features: 512

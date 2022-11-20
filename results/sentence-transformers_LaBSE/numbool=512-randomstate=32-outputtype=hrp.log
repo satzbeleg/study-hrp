@@ -64,3 +64,7 @@
 22-11-08 09:05:41 - INFO - root: [('reg:1e-05', 74.46), ('reg:0.0001', 74.44), ('reg:0.001', 74.83), ('reg:0.01', 75.07)]
 22-11-08 09:05:41 - INFO - root: Cross-validation : best param found is reg = 0.01             with score 75.07
 22-11-08 09:05:41 - INFO - root: Evaluating...
+22-11-19 16:29:37 - INFO - sentence_transformers.SentenceTransformer: Load pretrained SentenceTransformer: sentence-transformers/LaBSE
+22-11-19 16:29:41 - INFO - sentence_transformers.SentenceTransformer: Use pytorch device: cuda
+22-11-19 16:29:41 - INFO - __main__: SBert model sentence-transformers/LaBSE is loaded.
+22-11-19 16:29:42 - INFO - __main__: Num of SBert features: 768

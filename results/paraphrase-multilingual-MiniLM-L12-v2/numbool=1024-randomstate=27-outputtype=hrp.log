@@ -64,3 +64,7 @@
 22-11-05 20:11:29 - INFO - root: [('reg:1e-05', 72.08), ('reg:0.0001', 72.62), ('reg:0.001', 71.17), ('reg:0.01', 71.25)]
 22-11-05 20:11:29 - INFO - root: Cross-validation : best param found is reg = 0.0001             with score 72.62
 22-11-05 20:11:29 - INFO - root: Evaluating...
+22-11-18 15:51:10 - INFO - sentence_transformers.SentenceTransformer: Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+22-11-18 15:51:12 - INFO - sentence_transformers.SentenceTransformer: Use pytorch device: cuda
+22-11-18 15:51:12 - INFO - __main__: SBert model paraphrase-multilingual-MiniLM-L12-v2 is loaded.
+22-11-18 15:51:14 - INFO - __main__: Num of SBert features: 384

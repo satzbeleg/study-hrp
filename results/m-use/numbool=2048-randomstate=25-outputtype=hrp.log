@@ -63,3 +63,6 @@
 22-11-14 12:56:24 - INFO - root: [('reg:1e-05', 73.95), ('reg:0.0001', 72.99), ('reg:0.001', 73.06), ('reg:0.01', 74.44)]
 22-11-14 12:56:24 - INFO - root: Cross-validation : best param found is reg = 0.01             with score 74.44
 22-11-14 12:56:24 - INFO - root: Evaluating...
+22-11-20 05:37:34 - INFO - absl: Using ./models-tfhub to cache modules.
+22-11-20 05:37:37 - INFO - __main__: m-USE model is loaded.
+22-11-20 05:37:39 - INFO - __main__: Num of m-USE features: 512
