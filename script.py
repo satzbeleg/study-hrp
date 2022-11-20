@@ -8,7 +8,7 @@ import tensorflow_text
 import senteval
 import sentence_embedding_evaluation_german as seeg
 import os
-# import sys
+import numpy as np
 import json
 
 
@@ -145,7 +145,7 @@ elif args.output_type == "sigmoid":
     def senteval_preprocess(params, batch):
         sentences = [' '.join(s) for s in batch]
         features = call_model_embed(sentences)
-        return (features > 0).astype(float)  # rounded sigmoid 
+        return (features > 0.0).astype(np.float32)  # rounded sigmoid 
 
 elif args.output_type == "float":
     def senteval_preprocess(params, batch):
@@ -210,7 +210,7 @@ if args.output_type == "hrp":
 elif args.output_type == "sigmoid":
     def seeg_preprocess(sentences):
         features = call_model_embed(sentences)
-        return (features > 0).astype(float)  # rounded sigmoid 
+        return (features > 0.0).astype(np.float32)  # rounded sigmoid 
 
 elif args.output_type == "float":
     def seeg_preprocess(sentences):
