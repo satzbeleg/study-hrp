@@ -225,7 +225,7 @@ seeg_params = {
     'bias': True,
     'balanced': True,
     'batch_size': 128, 
-    'num_epochs': 250,
+    'num_epochs': 500,
 }
 
 # -----------------------------------------------
