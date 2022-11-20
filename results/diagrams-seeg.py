@@ -93,18 +93,19 @@ for i, model in enumerate(MODELS):
 baselines1 = np.array(baselines1)
 avg_bases1 = baselines1.mean(axis=1)
 
-# read baselines 2 (sigmoid)
-# baselines2 = []
-# FILE = "numbool=None-randomstate=None-outputtype=sigmoid-seeg.json"
-# for i, model in enumerate(MODELS):
-#     dat = json.load(open(f"{model}/{FILE}", "r"))
-#     tmp = [
-#         [d for d in dat if d.get("task") == test][0]["test"][metric]
-#         for test in TESTS]
-#     baselines2.append(tmp)
 
-# baselines2 = np.array(baselines2)
-# avg_bases2 = baselines2.mean(axis=1)
+# read baselines 2 (sigmoid)
+baselines2 = []
+FILE = "numbool=None-randomstate=None-outputtype=sigmoid-seeg.json"
+for i, model in enumerate(MODELS):
+    dat = json.load(open(f"{model}/{FILE}", "r"))
+    tmp = [
+        [d for d in dat if d.get("task") == test][0]["test"][metric]
+        for test in TESTS]
+    baselines2.append(tmp)
+
+baselines2 = np.array(baselines2)
+avg_bases2 = baselines2.mean(axis=1)
 
 
 # line styles
@@ -136,7 +137,7 @@ for i, modelname in enumerate(MODELNAME):
     ax.plot([100.], [avg_bases1[i]], marker=styles[i][1], color="black", alpha=0.5)
 
 # for i, modelname in enumerate(MODELNAME):
-#     ax.plot([100 * 0.03125], [avg_bases2[i]], marker=styles[i][1], color="darkgrey", alpha=0.5)
+    ax.plot([100 * 0.03125], [avg_bases2[i]], marker=styles[i][1], color="darkgrey", alpha=0.5)
 
 ax.set_xscale("log")
 ax.xaxis.set_major_formatter(matplotlib.ticker.ScalarFormatter())
