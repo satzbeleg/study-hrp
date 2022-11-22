@@ -24,13 +24,15 @@ declare -a NUMBOOLFEATS=(256 384 512 768 1024 1536 2048)
 # random seeds
 declare -a SEEDS=(23 24 25 26 27 28 29 30 31 32)
 
+# delete that
+python3 script.py --model=laser-de --output-type=sigmoid
 
 for MODEL in ${MODELS[*]} ; do
     # run sigmoid
-    # python3 script.py --model=$MODEL --output-type=sigmoid
+    python3 script.py --model=$MODEL --output-type=sigmoid
 
     # run original sentence embeddings
-    # python3 script.py --model=$MODEL --output-type=float
+    python3 script.py --model=$MODEL --output-type=float
 
     # run hrp
     for NFEATS in ${NUMBOOLFEATS[*]} ; do
