@@ -231,7 +231,7 @@ seeg_params = {
 # -----------------------------------------------
 # (4b) SEEG downstream tasks
 
-seeg_tasks = ['VMWE', 'ABSD-2', 'MIO-P', 'ARCHI', 'LSDC', 'KLEX-P']
+seeg_tasks = ['VMWE', 'ABSD-2', 'MIO-P', 'ARCHI', 'LSDC']
 
 # -----------------------------------------------
 # (5b) Run SEEG 
