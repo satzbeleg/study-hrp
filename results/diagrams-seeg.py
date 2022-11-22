@@ -6,26 +6,26 @@ import matplotlib.ticker
 
 MODELS = [
     'paraphrase-multilingual-mpnet-base-v2',
-    # 'paraphrase-multilingual-MiniLM-L12-v2',
-    # 'distiluse-base-multilingual-cased-v2',
-    # 'sentence-transformers_LaBSE',
+    'paraphrase-multilingual-MiniLM-L12-v2',
+    'distiluse-base-multilingual-cased-v2',
+    'sentence-transformers_LaBSE',
     # 'm-use',
-    # 'laser-de',
+    'laser-de',
 ]
 MODELNAME = [
     "SBert MPNet v2",
-    # "SBert MiniLM v2",
-    # "SBert DistilUSE v2",
-    # "LaBSE",
+    "SBert MiniLM v2",
+    "SBert DistilUSE v2",
+    "LaBSE",
     # "m-USE",
-    # "LASER de"
+    "LASER de"
 ]
 MODELDIM = [
     768, 
     384, 
     512, 
     768, 
-    512, 
+    # 512, 
     1024
 ]
 
@@ -94,17 +94,17 @@ avg_bases1 = baselines1.mean(axis=1)
 
 
 # read baselines 2 (sigmoid)
-# baselines2 = []
-# FILE = "numbool=None-randomstate=None-outputtype=sigmoid-seeg.json"
-# for i, model in enumerate(MODELS):
-#     dat = json.load(open(f"{model}/{FILE}", "r"))
-#     tmp = [
-#         [d for d in dat if d.get("task") == test][0]["test"][metric]
-#         for test in TESTS]
-#     baselines2.append(tmp)
+baselines2 = []
+FILE = "numbool=None-randomstate=None-outputtype=sigmoid-seeg.json"
+for i, model in enumerate(MODELS):
+    dat = json.load(open(f"{model}/{FILE}", "r"))
+    tmp = [
+        [d for d in dat if d.get("task") == test][0]["test"][metric]
+        for test in TESTS]
+    baselines2.append(tmp)
 
-# baselines2 = np.array(baselines2)
-# avg_bases2 = baselines2.mean(axis=1)
+baselines2 = np.array(baselines2)
+avg_bases2 = baselines2.mean(axis=1)
 
 
 # line styles
@@ -135,8 +135,8 @@ for i, modelname in enumerate(MODELNAME):
 for i, modelname in enumerate(MODELNAME):
     ax.plot([100.], [avg_bases1[i]], marker=styles[i][1], color="black", alpha=0.5)
 
-# for i, modelname in enumerate(MODELNAME):
-    # ax.plot([100 * 0.03125], [avg_bases2[i]], marker=styles[i][1], color="darkgrey", alpha=0.5)
+for i, modelname in enumerate(MODELNAME):
+    ax.plot([100 * 0.03125], [avg_bases2[i]], marker=styles[i][1], color="darkgrey", alpha=0.5)
 
 ax.set_xscale("log")
 ax.xaxis.set_major_formatter(matplotlib.ticker.ScalarFormatter())
