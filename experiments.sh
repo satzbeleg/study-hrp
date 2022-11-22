@@ -2,6 +2,9 @@
 
 conda activate gpu-venv-study-hrp
 
+export PYTORCH_CUDA_ALLOC_CONF=garbage_collection_threshold:0.6,max_split_size_mb:128
+# export TF_ENABLE_ONEDNN_OPTS=1
+
 export SENTENCE_TRANSFORMERS_HOME=./models-sbert
 export TFHUB_CACHE_DIR=./models-tfhub
 
@@ -27,16 +30,16 @@ for MODEL in ${MODELS[*]} ; do
     python3 script.py --model=$MODEL --output-type=sigmoid
 
     # run original sentence embeddings
-    python3 script.py --model=$MODEL --output-type=float
+    # python3 script.py --model=$MODEL --output-type=float
 
     # run hrp
-    for NFEATS in ${NUMBOOLFEATS[*]} ; do
-        for SEED in ${SEEDS[*]} ; do
-            python3 script.py \
-                --model=$MODEL \
-                --num-bool-features=$NFEATS \
-                --random-state=$SEED \
-                --output-type=hrp
-        done
-    done
+    # for NFEATS in ${NUMBOOLFEATS[*]} ; do
+    #     for SEED in ${SEEDS[*]} ; do
+    #         python3 script.py \
+    #             --model=$MODEL \
+    #             --num-bool-features=$NFEATS \
+    #             --random-state=$SEED \
+    #             --output-type=hrp
+    #     done
+    # done
 done

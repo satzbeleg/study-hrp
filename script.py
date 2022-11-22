@@ -8,7 +8,7 @@ import tensorflow_text
 import senteval
 import sentence_embedding_evaluation_german as seeg
 import os
-# import sys
+import numpy as np
 import json
 
 
@@ -145,7 +145,7 @@ elif args.output_type == "sigmoid":
     def senteval_preprocess(params, batch):
         sentences = [' '.join(s) for s in batch]
         features = call_model_embed(sentences)
-        return (features > 0).astype(float)  # rounded sigmoid 
+        return (features > 0.0).astype(np.float32)  # rounded sigmoid 
 
 elif args.output_type == "float":
     def senteval_preprocess(params, batch):
@@ -188,11 +188,13 @@ senteval_tasks = [
 # -----------------------------------------------
 # (5a) Run SentEval
 
-se = senteval.engine.SE(senteval_params, senteval_preprocess, senteval_prepare)
-senteval_results = se.eval(senteval_tasks)
+# CODE TEMPORARILY DEACTIVATED!!!
 
-with open(f"{RESULTFILEPATH}-senteval.json", 'w') as fp:
-    json.dump(senteval_results, fp)
+# se = senteval.engine.SE(senteval_params, senteval_preprocess, senteval_prepare)
+# senteval_results = se.eval(senteval_tasks)
+
+# with open(f"{RESULTFILEPATH}-senteval.json", 'w') as fp:
+#     json.dump(senteval_results, fp)
 
 
 # -----------------------------------------------
@@ -208,7 +210,7 @@ if args.output_type == "hrp":
 elif args.output_type == "sigmoid":
     def seeg_preprocess(sentences):
         features = call_model_embed(sentences)
-        return (features > 0).astype(float)  # rounded sigmoid 
+        return (features > 0.0).astype(np.float32)  # rounded sigmoid 
 
 elif args.output_type == "float":
     def seeg_preprocess(sentences):
