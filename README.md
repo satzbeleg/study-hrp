@@ -11,7 +11,8 @@ TensorFlow needs the CUDA drivers that available as Python packages only via Con
 conda install pip
 conda create --name gpu-venv-study-hrp python=3.9 pip
 conda activate gpu-venv-study-hrp
-conda install cudatoolkit=11 cudnn=8 -c conda-forge
+# conda install cudatoolkit=11 cudnn=8 -c conda-forge
+conda install cudatoolkit=11 -c conda-forge
 pip install -r requirements.txt
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/
 ```
