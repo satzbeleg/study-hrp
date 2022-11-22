@@ -188,13 +188,11 @@ senteval_tasks = [
 # -----------------------------------------------
 # (5a) Run SentEval
 
-# CODE TEMPORARILY DEACTIVATED!!!
+se = senteval.engine.SE(senteval_params, senteval_preprocess, senteval_prepare)
+senteval_results = se.eval(senteval_tasks)
 
-# se = senteval.engine.SE(senteval_params, senteval_preprocess, senteval_prepare)
-# senteval_results = se.eval(senteval_tasks)
-
-# with open(f"{RESULTFILEPATH}-senteval.json", 'w') as fp:
-#     json.dump(senteval_results, fp)
+with open(f"{RESULTFILEPATH}-senteval.json", 'w') as fp:
+    json.dump(senteval_results, fp)
 
 
 # -----------------------------------------------

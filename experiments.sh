@@ -9,12 +9,12 @@ export SENTENCE_TRANSFORMERS_HOME=./models-sbert
 export TFHUB_CACHE_DIR=./models-tfhub
 
 declare -a MODELS=(
-    # paraphrase-multilingual-mpnet-base-v2 
-    # paraphrase-multilingual-MiniLM-L12-v2 
-    # distiluse-base-multilingual-cased-v2 
-    # sentence-transformers/LaBSE
-    # laser-de
-    # laser-en
+    paraphrase-multilingual-mpnet-base-v2 
+    paraphrase-multilingual-MiniLM-L12-v2 
+    distiluse-base-multilingual-cased-v2 
+    sentence-transformers/LaBSE
+    laser-de
+    laser-en
     m-use
 )
 
@@ -24,8 +24,6 @@ declare -a NUMBOOLFEATS=(256 384 512 768 1024 1536 2048)
 # random seeds
 declare -a SEEDS=(23 24 25 26 27 28 29 30 31 32)
 
-# delete that
-python3 script.py --model=laser-de --output-type=sigmoid
 
 for MODEL in ${MODELS[*]} ; do
     # run sigmoid
