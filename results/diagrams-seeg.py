@@ -112,7 +112,7 @@ with open("table-seeg.tex", "w") as fp:
         line = np.array2string(
             np.array(baselines1[i].tolist() + [avg_bases1[i]]) * 100., 
             separator=" & ", formatter={'float_kind':lambda x: "%.2f" % x})
-        fp.write(f"original & {line[1:-1]} \\\\\n")
+        fp.write(f"{MODELS[i]} & {line[1:-1]} \\\\\n")
         # sigmoid baseline
         line = np.array2string(
             np.array(baselines2[i].tolist() + [avg_bases2[i]]) * 100., 
