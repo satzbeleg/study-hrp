@@ -9,7 +9,7 @@ MODELS = [
     'paraphrase-multilingual-MiniLM-L12-v2',
     'distiluse-base-multilingual-cased-v2',
     'sentence-transformers_LaBSE',
-    # 'm-use',
+    'm-use',
     'laser-de',
 ]
 MODELNAME = [
@@ -17,7 +17,7 @@ MODELNAME = [
     "SBert MiniLM v2",
     "SBert DistilUSE v2",
     "LaBSE",
-    # "m-USE",
+    "m-USE",
     "LASER de"
 ]
 MODELDIM = [
@@ -25,7 +25,7 @@ MODELDIM = [
     384, 
     512, 
     768, 
-    # 512, 
+    512, 
     1024
 ]
 
@@ -44,15 +44,11 @@ TESTS = [
     'ABSD-2', 
     'MIO-P', 
     'ARCHI', 
-    'LSDC', 
 ]
 
-# metric = "acc"
-metric = "f1-balanced"
+metric = "acc"
+# metric = "f1-balanced"
 
-
-with open("table-seeg.csv", "w") as fp:
-    fp.write("Model," + ",".join(TESTS) + ",Avg\n")
 
 # lookup tables: tab[model,size,test]
 res_mu = np.empty((len(MODELS), len(NFEATS), len(TESTS)))
@@ -107,6 +103,31 @@ baselines2 = np.array(baselines2)
 avg_bases2 = baselines2.mean(axis=1)
 
 
+# save tables
+with open("table-seeg.tex", "w") as fp:
+    fp.write("Model & " + " & ".join(TESTS) + " & Avg \\\\\n")
+    for i in range(len(MODELS)):
+        fp.write(f"% {MODELS[i]} \n")
+        # original baseline
+        line = np.array2string(
+            np.array(baselines1[i].tolist() + [avg_bases1[i]]) * 100., 
+            separator=" & ", formatter={'float_kind':lambda x: "%.2f" % x})
+        fp.write(f"original & {line[1:-1]} \\\\\n")
+        # sigmoid baseline
+        line = np.array2string(
+            np.array(baselines2[i].tolist() + [avg_bases2[i]]) * 100., 
+            separator=" & ", formatter={'float_kind':lambda x: "%.2f" % x})
+        fp.write(f"sigmoid & {line[1:-1]} \\\\\n")
+        # HRP results
+        for j in range(len(NFEATS)):
+            line = np.array2string(
+                np.array(res_mu[i, j, :].tolist() + [res_mu[i, j, :].mean()]) * 100., 
+                separator=" & ", formatter={'float_kind':lambda x: "%.2f" % x})
+            fp.write(f"{NFEATS[j]} & {line[1:-1]} \\\\\n")
+        # end of table
+        fp.write(f"\\midrule \n")
+
+
 # line styles
 styles = [
     ("dotted", "v"),
@@ -141,7 +162,7 @@ for i, modelname in enumerate(MODELNAME):
 ax.set_xscale("log")
 ax.xaxis.set_major_formatter(matplotlib.ticker.ScalarFormatter())
 ax.set_xlabel("memory consumption rate in %")
-ax.set_ylabel("avg. F1-Balanced for all tests")
+ax.set_ylabel("avg. accuracy for all tests")
 ax.legend(
     loc='upper center', bbox_to_anchor=(0.5, 1.2),
     ncol=2, fancybox=True, shadow=True)
@@ -170,7 +191,7 @@ for k, testname in enumerate(TESTS):
             label=modelname, capsize=5, elinewidth=.5, capthick=.5,
             linestyle=styles[i][0], marker=styles[i][1])
     ax.set_xlabel("memory consumption rate in %")
-    ax.set_ylabel("F1-Balanced")
+    ax.set_ylabel("accuracy")
     ax.legend(
         loc='upper center', bbox_to_anchor=(0.5, 1.35),
         ncol=2, fancybox=True, shadow=True)

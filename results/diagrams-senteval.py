@@ -37,9 +37,6 @@ TESTS = ['MR', 'CR', 'SUBJ', 'MPQA', 'SST5', 'TREC', 'MRPC']
 METRICS = ['acc', 'acc', 'acc', 'acc', 'acc', 'acc', 'acc']
 
 
-with open("table-senteval.csv", "w") as fp:
-    fp.write("Model," + ",".join(TESTS) + ",Avg\n")
-
 # lookup tables: tab[model,size,test]
 res_mu = np.empty((len(MODELS), len(NFEATS), len(TESTS)))
 res_sd = np.empty((len(MODELS), len(NFEATS), len(TESTS)))
@@ -84,6 +81,31 @@ for i, model in enumerate(MODELS):
 
 baselines2 = np.array(baselines2)
 avg_bases2 = baselines2.mean(axis=1)
+
+
+# save tables
+with open("table-senteval.tex", "w") as fp:
+    fp.write("Model & " + " & ".join(TESTS) + " & Avg \\\\\n")
+    for i in range(len(MODELS)):
+        fp.write(f"% {MODELS[i]} \n")
+        # original baseline
+        line = np.array2string(
+            np.array(baselines1[i].tolist() + [avg_bases1[i]]) * 1., 
+            separator=" & ", formatter={'float_kind':lambda x: "%.2f" % x})
+        fp.write(f"original & {line[1:-1]} \\\\\n")
+        # sigmoid baseline
+        line = np.array2string(
+            np.array(baselines2[i].tolist() + [avg_bases2[i]]) * 1., 
+            separator=" & ", formatter={'float_kind':lambda x: "%.2f" % x})
+        fp.write(f"sigmoid & {line[1:-1]} \\\\\n")
+        # HRP results
+        for j in range(len(NFEATS)):
+            line = np.array2string(
+                np.array(res_mu[i, j, :].tolist() + [res_mu[i, j, :].mean()]) * 1., 
+                separator=" & ", formatter={'float_kind':lambda x: "%.2f" % x})
+            fp.write(f"{NFEATS[j]} & {line[1:-1]} \\\\\n")
+        # end of table
+        fp.write(f"\\midrule \n")
 
 
 # line styles
