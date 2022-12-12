@@ -154,10 +154,10 @@ for i, modelname in enumerate(MODELNAME):
     ax.plot(x, avg_mu[i, :], label=modelname, marker=styles[i][1], linestyle=styles[i][0], color=colors[i])
 
 for i, modelname in enumerate(MODELNAME):
-    ax.plot([100.], [avg_bases1[i]], marker=styles[i][1], color="black", alpha=1.0)
+    ax.plot([100.], [avg_bases1[i]], marker=styles[i][1], color="darkgrey", alpha=.9)
 
 for i, modelname in enumerate(MODELNAME):
-    ax.plot([100 * 0.03125], [avg_bases2[i]], marker=styles[i][1], color="darkgrey", alpha=1.0)
+    ax.plot([100 * 0.03125], [avg_bases2[i]], marker=styles[i][1], color="black", alpha=.9)
 
 ax.set_xscale("log")
 ax.xaxis.set_major_formatter(matplotlib.ticker.ScalarFormatter())

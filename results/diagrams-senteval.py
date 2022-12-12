@@ -151,11 +151,11 @@ for i, modelname in enumerate(MODELNAME):
     # xmins.append(x[-1])
 
 for i, modelname in enumerate(MODELNAME):
-    ax.plot([100.], [avg_bases1[i]], marker=styles[i][1], color="black", alpha=1.0)
+    ax.plot([100.], [avg_bases1[i]], marker=styles[i][1], color="darkgrey", alpha=.9)
     # ax.hlines(avg_bases1[i], 15, 20, linewidth=0.75, linestyle="solid", color=colors[i], alpha=0.8)
 
 for i, modelname in enumerate(MODELNAME):
-    ax.plot([100 * 0.03125], [avg_bases2[i]], marker=styles[i][1], color="darkgrey", alpha=1.0)
+    ax.plot([100 * 0.03125], [avg_bases2[i]], marker=styles[i][1], color="black", alpha=.9)
     # ax.hlines(avg_bases2[i], 0, xmax, linewidth=0.75, linestyle="dotted", color=colors[i], alpha=0.8)
 
 ax.set_xscale("log")
