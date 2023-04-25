@@ -71,3 +71,20 @@ python -m laserembeddings download-models
 nohup bash experiments.sh &
 ```
 
+
+### Acknowledgements
+The "Evidence" project was funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) - [433249742](https://gepris.dfg.de/gepris/projekt/433249742) (GU 798/27-1; GE 1119/11-1).
+
+### Citation
+The experiments are part of the arXiv preprint: 
+
+```
+@misc{hamster2023rediscovering,
+      title={Rediscovering Hashed Random Projections for Efficient Quantization of Contextualized Sentence Embeddings}, 
+      author={Ulf A. Hamster and Ji-Ung Lee and Alexander Geyken and Iryna Gurevych},
+      year={2023},
+      eprint={2304.02481},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
